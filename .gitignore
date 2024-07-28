@@ -5,3 +5,5 @@ test.py
 */*/__pycache__
 */*/*/__pycache__
 __pycache__
+todo.md
+prompt.md
