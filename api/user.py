@@ -9,6 +9,27 @@ def get_user(username):
     return DBGet.get_user(username)
 
 
+def get_users():
+    return DBGet.get_users()
+
+
+def get_usernames():
+    users = get_users()
+    usernames = []
+    for user in users:
+        usernames.append(user.username)
+
+
+def check_username(username):
+    usernames = get_usernames()
+    if username is not None and usernames is not None:
+        return username in usernames
+    if not usernames:
+        return True
+    else:
+        return False
+
+
 def get_user_password(username):
     return DBGet.get_user_password(username)
 
@@ -21,5 +42,5 @@ def delete_user(user_id):
     return DBDelete.delete_user(user_id)
 
 
-def verify_password(username, password):
-    return DBGet.verify_password(username, password)
+def verify_user(username, password):
+    return DBGet.verify_user(username, password)

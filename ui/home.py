@@ -1,12 +1,20 @@
 import streamlit as st
+from ui.login import handle_login
+from ui.register import handle_register
+from ui.user_home import user_home
 
 
 def display_home():
     st.title("Disaster Alert App")
-    st.write("Welcome to the Disaster Alert App. Please choose an option below.")
 
-    if st.button("Login"):
-        st.session_state.page = "login"
+    choice = st.selectbox("Login/Register", ["Login", "Register"])
+    if "user" in st.session_state:
+        username = st.session_state.user.username
+        st.write("Welcome back, {}!".format(username))
+        user_home()
 
-    if st.button("Register"):
-        st.session_state.page = "register"
+    if choice == "Login":
+        handle_login()
+
+    if choice == "Register":
+        handle_register()

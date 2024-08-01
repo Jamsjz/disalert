@@ -11,6 +11,12 @@ class DBGet:
         return user
 
     @staticmethod
+    def get_users():
+        session = Session()
+        users = session.query(User).all()
+        return users
+
+    @staticmethod
     def get_alert(id: int):
         session = Session()
         alert = session.query(Alert).filter_by(id=id).first()
@@ -85,7 +91,7 @@ class DBGet:
         return alerts
 
     @staticmethod
-    def verify_password(username: str, password: str) -> bool:
+    def verify_user(username: str, password: str) -> bool:
         try:
             stored_password = DBGet.get_user_password(username)
             if stored_password is None:

@@ -1,5 +1,4 @@
 import folium
-from folium.plugins import HeatMap
 
 
 def generate_map(alerts_df):

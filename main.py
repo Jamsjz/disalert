@@ -2,6 +2,7 @@ import streamlit as st
 from ui.home import display_home
 from ui.login import handle_login
 from ui.register import handle_register
+from ui.user_home import user_home
 
 
 def main():
@@ -16,6 +17,8 @@ def main():
         handle_login()
     elif st.session_state.page == "register":
         handle_register()
+    elif st.session_state.page == "user_home":
+        user_home()
 
 
 if __name__ == "__main__":
