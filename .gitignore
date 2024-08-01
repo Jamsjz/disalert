@@ -7,3 +7,4 @@ test.py
 __pycache__
 todo.md
 prompt.md
+sqlite.db
