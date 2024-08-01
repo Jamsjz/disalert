@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine
 
-DATABASE_URL = "postgresql://j:j@localhost:5432/disalert"
+DATABASE_URL = "sqlite://sqlite.db"
 engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 
