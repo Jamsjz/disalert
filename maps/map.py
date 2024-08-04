@@ -1,5 +1,5 @@
 import folium
-from folium.plugins import MarkerCluster, HeatMap
+from folium.plugins import MarkerCluster, LocateControl, Fullscreen
 
 def generate_map(alerts_df):
     map_center = [27.7172, 85.3240]
@@ -11,7 +11,21 @@ def generate_map(alerts_df):
         attr='Esri',
         name='Satellite',
         overlay=False,
-        control=True
+        control=True,
+    ).add_to(folium_map)
+
+    # Add location control
+    LocateControl(
+        position="bottomright",
+        auto_start=False,
+        ).add_to(folium_map)
+
+   # Add zoom control
+    folium.plugins.Fullscreen(
+        position='bottomright',
+        title='Expand map',
+        title_cancel='Exit fullscreen',
+        force_separate_button=True
     ).add_to(folium_map)
 
     # Create a MarkerCluster
