@@ -79,7 +79,6 @@
     text-align: center;
 }
 
-/* Footer artifacts */
 .footer-artifacts::after {
     content: "© 2023 Disaster Alert App | About | Contact";
 }
@@ -88,5 +87,3 @@
 .block-container {
     padding-bottom: 0 !important;
 }
-
-
